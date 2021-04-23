@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.reserva.dao.MealMapper">
+
+    <insert id="insertMeal" parameterType="Meal">
+        insert into meal values(null,#{name},#{name1},#{sex},#{age},#{price},#{introduction})
+    </insert>
+
+    <select id="selectMealByNum" resultType="Meal" parameterType="int">
+        select * from meal where number=#{number}
+    </select>
+
+    <update id="updateMealByNum" parameterType="Meal">
+        update meal set name=#{name},name1={name1},sex={sex},age={age},price=#{price},introduction=#{introduction} where number=#{number}
+    </update>
+
+</mapper>
